@@ -1,7 +1,7 @@
 package com.deveem.core.network
 
-import com.autocare.BuildConfig.BASE_URL
-import com.autocare.data.remote.ApiService
+import com.deveem.BuildConfig.BASE_URL
+import com.deveem.data.remote.ApiService
 import com.readystatesoftware.chuck.ChuckInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

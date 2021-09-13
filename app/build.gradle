@@ -8,6 +8,8 @@ android {
 
     project.ext {
         koin_version = "2.2.2"
+        retrofit_version = '2.9.0'
+        moshi_version = '1.12.0'
     }
 
     defaultConfig {
@@ -23,11 +25,15 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+
+            buildConfigField "String", "BASE_URL", "\"http://jsonplaceholder.typicode.com\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         debug {
             debuggable true
+
+            buildConfigField "String", "BASE_URL", "\"http://jsonplaceholder.typicode.com\""
             minifyEnabled false
         }
     }
@@ -59,6 +65,15 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
+
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+
     // KoinDI
     implementation "io.insert-koin:koin-android:$koin_version"
     implementation "io.insert-koin:koin-androidx-scope:$koin_version"
@@ -72,6 +87,8 @@ dependencies {
 
     // Logs
     implementation 'com.jakewharton.timber:timber:4.7.1'
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
 
     // Core
     implementation 'androidx.core:core-ktx:1.6.0'
