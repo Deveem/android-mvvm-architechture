@@ -1,1 +1,1 @@
-# android-mvvm-architechture
+# android-mvvm-architecture
