@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Loader  -->
+    <style name="Loader"/>
+    <style name="Loader.Medium">
+        <item name="android:layout_width">@dimen/loader_medium</item>
+        <item name="android:layout_height">@dimen/loader_medium</item>
+        <item name="android:indeterminateTint">@color/white</item>
+    </style>
+
+</resources>
