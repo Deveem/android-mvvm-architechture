@@ -1,14 +1,15 @@
-# OrderTiger Android app
+# Core MVVM architecture
 
 ## Introduction
 
-OrderTiger is On-demand online ordering platform powering multi-vendor marketplaces, franchises and small businesses.
-Verticals: Restaurants, Groceries, Bakeries, Corporate Caterers, Convenience Stores, Cafes, Food Trucks, Drinks, Hospitals, Hotels, Resorts, Campuses, Dark Kitchens, Festivals and other business verticals. 
-<br/>See more https://www.ordertiger.com/
+Hi there 👋!
+
+This project demonstrates a simple Android MVVM Design Pattern. Feel free to clone and use for your needs. 😉✌️
+<br/>More info: https://developer.android.com/jetpack/guide
 
 # Application Architecture
 
-The whole application is built based on the MVVM architectural pattern.
+MVVM diagram
 
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*OqeNRtyjgWZzeUifrQT-NA.png)
 
