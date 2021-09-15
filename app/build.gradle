@@ -50,9 +50,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-//    kotlinOptions {
-//        jvmTarget = '1.8'
-//    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
     buildFeatures {
         viewBinding true
     }
@@ -85,7 +85,7 @@ dependencies {
     // Architecture Components
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation 'androidx.core:core-ktx:1.7.0-alpha02'
+    implementation 'androidx.core:core-ktx:1.7.0-alpha01'
 
     // Logs
     implementation 'com.jakewharton.timber:timber:4.7.1'
