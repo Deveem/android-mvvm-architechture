@@ -11,7 +11,7 @@ This project demonstrates a simple Android MVVM Design Pattern. Feel free to clo
 
 MVVM diagram
 
-![alt text](https://cdn-images-1.medium.com/max/1600/1*OqeNRtyjgWZzeUifrQT-NA.png)
+![alt text](https://user-images.githubusercontent.com/1812129/68319008-e9d39d00-00bd-11ea-9245-ebedd2a2c067.png)
 
 ## Programming Practices Followed
 

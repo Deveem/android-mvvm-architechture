@@ -2,6 +2,7 @@ package com.deveem.core.network
 
 import com.deveem.BuildConfig.BASE_URL
 import com.deveem.data.remote.ApiService
+import com.deveem.data.remote.RemoteDataSource
 import com.readystatesoftware.chuck.ChuckInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -19,6 +20,7 @@ val networkModule = module {
     factory { provideApi(get()) }
     factory { provideMoshi() }
     single { provideRetrofit(get(), get()) }
+    factory { RemoteDataSource(get()) }
 }
 
 fun provideRetrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
