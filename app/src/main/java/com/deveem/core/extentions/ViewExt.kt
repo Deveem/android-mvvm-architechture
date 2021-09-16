@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.annotation.ColorRes
@@ -12,6 +13,7 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.MenuRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import com.deveem.R
 import com.deveem.core.utils.Log
 import com.deveem.utils.PhoneTextFormatter
 import com.google.android.material.textfield.TextInputLayout
@@ -101,8 +103,8 @@ fun TextInputLayout.showError(@StringRes errorRes: Int, vibrate: Boolean = true)
     error = message
 
     if (vibrate) {
-        //val animVibrate = AnimationUtils.loadAnimation(context, R.anim.vibrate)
-        //this.startAnimation(animVibrate)
+        val animVibrate = AnimationUtils.loadAnimation(context, R.anim.vibrate)
+        this.startAnimation(animVibrate)
     }
 }
 
@@ -110,8 +112,8 @@ fun TextInputLayout.showError(message: String, vibrate: Boolean = true) {
     error = message
 
     if (vibrate) {
-        //val animVibrate = AnimationUtils.loadAnimation(context, R.anim.vibrate)
-        //this.startAnimation(animVibrate)
+        val animVibrate = AnimationUtils.loadAnimation(context, R.anim.vibrate)
+        this.startAnimation(animVibrate)
     }
 }
 
