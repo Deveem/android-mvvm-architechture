@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/medium_margin">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Modern kitchen" />
+
+        <TextView
+            android:id="@+id/tv_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:maxLines="2"
+            tools:ignore="SmallSp"
+            tools:text="Sure, No problem..." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
