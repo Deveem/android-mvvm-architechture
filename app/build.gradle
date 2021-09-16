@@ -2,7 +2,20 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'io.github.rockerhieu.versionberg' version '1.0.2'
 }
+
+apply from: "distribution.gradle"
+
+versionberg {
+    major 1 //Increase when you make incompatible API changes (default value is 0)
+    minor 0 //Increase when you add functionality in a backwards-compatible manner (default value is 0)
+    patch 0 //Increase when you make backwards-compatible bug fixes (default value is 0)
+    // build 2 default is ${commitCount}, uncomment to use a custom build number
+    nameTemplate = "$major.$minor.$commitCount"
+    codeTemplate = "$build"
+}
+
 android {
 
     compileSdk 30
@@ -17,8 +30,8 @@ android {
         applicationId "io.deveem.mvvm.android"
         minSdk 22
         targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        versionCode versionberg.code
+        versionName versionberg.name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -42,7 +55,7 @@ android {
     // Generated apk/aab file name
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "$applicationId-${variant.name}-build-${variant.versionCode}(v${variant.versionName}).apk"
+            outputFileName = "$applicationId-${variant.name}-${variant.versionCode}(v${variant.versionName}).apk"
         }
     }
 

@@ -1,0 +1,35 @@
+ext {
+    currentBranchName = this.getCurrentBranchName()
+    commitCount = this.generateVersionCode()
+    commitSha = this.getCommitSha()
+}
+
+def getCurrentBranchName() {
+    //Git must be installed and in your PATH!
+    def branch = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'name-rev', '--name-only', 'HEAD'
+        standardOutput = branch
+    }
+    return branch.toString().trim()
+}
+
+def generateVersionCode() {
+
+    def value = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-list', '--all', '--count'
+        standardOutput = value
+    }
+    return value.toString().trim()
+}
+
+def getCommitSha() {
+
+    def value = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = value
+    }
+    return value.toString().trim()
+}
