@@ -1,4 +1,4 @@
-package com.deveem.ui.home
+package com.deveem.ui.post
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

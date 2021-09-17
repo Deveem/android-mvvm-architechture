@@ -15,4 +15,11 @@ class PostRepository(private val dataSource: RemoteDataSource) {
             val response = dataSource.getPosts()
             emit(response)
         }
+
+    fun getPost(id: Int): LiveData<Resource<Post>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
+            val response = dataSource.getPost(id)
+            emit(response)
+        }
 }
